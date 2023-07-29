@@ -11,7 +11,7 @@ async function checkWeather(location){
     try {
         const response = await fetch(url, options);
         const result = await response.json();
-        console.log(result);
+        console.log(result.current);
     } catch (error) {
         console.error(error);
     }
