@@ -1,5 +1,6 @@
 const userInput = document.querySelector('.locationName');
 const searchBtn = document.querySelector('.btn');
+const image = document.querySelector('.image img');
 
 async function checkWeather(){
     const url = `https://weatherapi-com.p.rapidapi.com/current.json?q=${userInput.value}`;
@@ -14,7 +15,8 @@ async function checkWeather(){
     try {
         const response = await fetch(url, options);
         const result = await response.json();
-        console.log(result);
+        image.src = `https:${result.current.condition.icon}`;
+        console.log(image);
     } catch (error) {
         console.error(error);
     }
