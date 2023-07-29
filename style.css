@@ -109,4 +109,14 @@ button:active{
     text-align: center;
     display: none;
 }
+.loader-div {
+    display: none;
+    background-color: #fff;
+    margin: auto;
+    opacity: 0.8;
+}
+.loader-div img{
+    margin-top: 20px;
+    border-radius: 100px;
+}
 

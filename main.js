@@ -7,8 +7,10 @@ const infoPara1 = document.querySelector('.para1');
 const infoPara2 = document.querySelector('.para2');
 const errorDiv = document.querySelector('.error');
 const imageDiv = document.querySelector('.image');
+const laoderDiv = document.querySelector('.loader-div');
 
 async function checkWeather(){
+    laoderDiv.style.display="block";
     const url = `https://weatherapi-com.p.rapidapi.com/current.json?q=${userInput.value}`;
     const options = {
         mode: 'cors',
@@ -28,13 +30,13 @@ async function checkWeather(){
         errorDiv.style.display="none";
         infoDiv.style.display="block";
         imageDiv.style.display="block";
-        console.log(result);
+        laoderDiv.style.display="none";
     } catch (error) {
         infoDiv.style.display="none";
         imageDiv.style.display="none";
         errorDiv.style.display="block";
         errorDiv.textContent = `Location not Found or Check your Internet Connection [${error}]`;
-        // console.error(`${error}`);
+        laoderDiv.style.display="none";
     }
 }
 
