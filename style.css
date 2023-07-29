@@ -29,11 +29,11 @@ h3{
     color:white;
 }
 
-.form,p {
+.form, .header p{
     padding: 10px 10px 0 10px;
+    font-style: italic;
 }
 p{
-    font-style: italic;
     font-size: 15px;
 }
 .form{
